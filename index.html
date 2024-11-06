@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1>Bienvenido a la Red Social test</h1>
+
+    <div id="user-info" class="d-flex align-items-center mb-4">
+        <img id="fotoPerfil" src="user.jpg" alt="Foto de perfil" width="100" class="rounded-circle me-3">
+        <h2 id="displayName">Usuario</h2>
+        <!-- Botón para abrir el modal de actualización -->
+        <button type="button" class="btn btn-info ms-3" data-bs-toggle="modal"
+            data-bs-target="#actualizarModal">Actualizar Perfil</button>
+        <!-- Botón de cierre de sesión -->
+        <button type="button" id="logoutButton" class="btn btn-danger ms-3">Cerrar sesión</button>
+    </div>
+
+    <!-- Textarea para hacer publicaciones -->
+    <textarea cols="50" rows="5" id="nueva_publicacion" placeholder="Escribe tu publicación..."></textarea>
+    <br><br>
+    <label for="foto_publicacion">Sube una imagen (opcional):</label>
+    <input type="file" id="foto_publicacion" accept="image/*">
+    <hr>
+    <label for="video_publicacion">Sube un video (opcional):</label>
+    <input type="file" id="video_publicacion" accept="video/*">
+
+    <br><br>
+    <button type="button" id="publicar" class="btn btn-primary">Publicar</button>
+
+    <div id="publicaciones"></div>
+
+    <!-- Modal para editar publicación -->
+    <div class="modal fade" id="editarModal" tabindex="-1" role="dialog" aria-labelledby="editarModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editarModalLabel">Editar Publicación</h5>
+                </div>
+                <div class="modal-body">
+                    <textarea id="nuevoTexto" class="form-control"
+                        placeholder="Escribe la nueva publicación..."></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-bs-dismiss="modal" aria-label="Close">Cerrar</button>
+                    <button type="button" id="guardarCambios">Guardar cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para actualizar usuario y foto -->
+    <div class="modal fade" id="actualizarModal" tabindex="-1" aria-labelledby="actualizarModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="actualizarModalLabel">Actualizar Perfil</h5>
+                </div>
+                <div class="modal-body">
+                    <!-- Formulario para actualizar usuario y foto -->
+                    <div class="mb-3">
+                        <label for="nuevoNombre" class="form-label">Nuevo Nombre de Usuario</label>
+                        <input type="text" id="nuevoNombre" class="form-control" placeholder="Ingresa tu nuevo nombre">
+                    </div>
+                    <div class="mb-3">
+                        <label for="nuevaFoto" class="form-label">Nueva Foto de Perfil</label>
+                        <input type="file" id="nuevaFoto" class="form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" id="guardarPerfil">Guardar Cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>

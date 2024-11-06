@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cuenta</title>
+    <link rel="stylesheet" href="registrate.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"> <!-- Corregido -->
+</head>
+
+<body>
+    <form action="" id="formulario_crear">
+        <h1>Crea tu Cuenta</h1>
+
+        <label for="nombre">Nombres</label>
+        <input type="text" id="nombre" required><br><br> <!-- Campo obligatorio -->
+
+        <label for="fecha_nacimiento">Fecha de Nacimiento</label>
+        <input type="date" id="fecha_nacimiento" required><br><br> <!-- Campo obligatorio -->
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required><br><br> <!-- Campo obligatorio -->
+
+        <label for="password">Password</label>
+        <input type="password" id="password" required><br><br> <!-- Campo obligatorio -->
+
+        <input type="submit" value="Crear Cuenta">
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script> <!-- Añadido Toastify -->
+    <script src="registrate.js" type="module"></script>
+</body>
+
+</html>
